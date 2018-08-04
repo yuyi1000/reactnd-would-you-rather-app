@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import Login from './Login'
 
 class App extends Component {
 
   render() {
 
     return (
-
-      <h1>Hello world.</h1>
+      <div>
+        <h1>Hello world.</h1>
+        <Login />
+      </div>
     )
 
   }
