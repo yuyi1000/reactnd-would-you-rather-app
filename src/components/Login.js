@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends Component {
-
-
   state = {
     name: 'sarahedo',
   }
@@ -23,13 +21,14 @@ class Login extends Component {
   }
 
   render() {
+    console.log(this.props)
     const { authedUser } = this.props
     console.log(authedUser);
     if (authedUser) {
       // TODO: use redirect to home page
       return (
         <h2>
-          you have already signed in.
+          you have already signed in. your name is {authedUser}
         </h2>
       )
     }
@@ -48,7 +47,12 @@ class Login extends Component {
       </form>
     )
   }
-
 }
 
-export default connect()(Login)
+function mapStateToProps ({ authedUser }) {
+  return {
+    authedUser,
+  }
+}
+
+export default connect(mapStateToProps)(Login)
