@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Login from './Login'
+import NewQuestion from './NewQuestion'
 
 class App extends Component {
 
@@ -9,7 +10,8 @@ class App extends Component {
     return (
       <div>
         <h1>Hello world.</h1>
-        <Login />
+        {/* <Login /> */}
+        <NewQuestion />
       </div>
     )
 
