@@ -1,6 +1,8 @@
 import {
   _saveQuestion,
   _saveQuestionAnswer,
+  _getUsers,
+  _getQuestions,
 } from './_DATA'
 
 export function saveQuestion (question) {
@@ -17,4 +19,14 @@ export function getNumberOfAnseredQuestions (user) {
 
 export function getNumberOfCreatedQuestions (user) {
   return user.questions.length
+}
+
+export function getInitalData () {
+  return Promise.all([
+    _getUsers(),
+    _getQuestions()
+  ]).then(([users, questions]) => ({
+    users,
+    questions,
+  }))
 }
