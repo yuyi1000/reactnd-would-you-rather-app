@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Login from './Login'
 import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
+import Home from './Home'
 import { handleInitalData } from '../actions/shared'
 
 class App extends Component {
@@ -19,7 +20,8 @@ class App extends Component {
         <h1>Hello world.</h1>
         {/* <Login /> */}
         {/* <NewQuestion /> */}
-        <Leaderboard />
+        {/* <Leaderboard /> */}
+        <Home />
       </div>
     )
 
