@@ -30,3 +30,15 @@ export function getInitalData () {
     questions,
   }))
 }
+
+export function getTotalVote (question) {
+  return getVoteForOptionOne(question) + getVoteForOptionTwo(question)
+}
+
+export function getVoteForOptionOne (question) {
+  return question.optionOne.votes.length
+}
+
+export function getVoteForOptionTwo (question) {
+  return question.optionTwo.votes.length
+}

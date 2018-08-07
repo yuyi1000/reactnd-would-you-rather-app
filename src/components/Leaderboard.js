@@ -8,7 +8,6 @@ class Leaderboard extends Component {
   render() {
 
     const { userIds } = this.props
-    console.log(userIds);
 
     return (
 

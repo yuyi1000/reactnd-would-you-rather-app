@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import UnansweredQuestions from './UnansweredQuestions'
 
 class Home extends Component {
 
 
   render() {
     return (
-      <h2>
-        this is home.
-      </h2>
+      <UnansweredQuestions />
     )
   }
 }

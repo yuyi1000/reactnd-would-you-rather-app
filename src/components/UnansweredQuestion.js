@@ -4,15 +4,22 @@ import { connect } from 'react-redux'
 class UnansweredQuestion extends Component {
 
   render() {
-
+    const { unansweredQuestion } = this.props
 
     return (
-      <h3>
-        this is UnansweredQuestion.
-      </h3>
+      <div>
+        Name: {unansweredQuestion.author},
+        OptionOne: {unansweredQuestion.optionOne.text},
+        OptionTwo: {unansweredQuestion.optionTwo.text}
+      </div>
     )
   }
-
 }
 
-export default connect()(UnansweredQuestion)
+function mapStateToProps ({ questions }, { questionId }) {
+  return {
+    unansweredQuestion: questions[questionId]
+  }
+}
+
+export default connect(mapStateToProps)(UnansweredQuestion)
