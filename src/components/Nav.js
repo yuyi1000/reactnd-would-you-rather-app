@@ -8,9 +8,25 @@ class Nav extends Component {
     const { authedUser } = this.props
     if (authedUser === null) {
       return (
-        <div>
-          Nav, not login.
-        </div>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to='/login' activeClassName='active'>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/login' activeClassName='active'>
+                New Question
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/leaderboard' activeClassName='active'>
+                Leaderboard
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
       )
     }
 
