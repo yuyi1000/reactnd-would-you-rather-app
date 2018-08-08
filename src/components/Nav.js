@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NavLink, Redirect } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'
 
 class Nav extends Component {
@@ -11,8 +11,8 @@ class Nav extends Component {
 
     e.preventDefault()
     dispatch(setAuthedUser(null))
-    // history.push('/')
-    return <Redirect to='/' />
+    history.push('/')
+    // return <Redirect to='/leaderboard' />
   }
 
   render() {
@@ -78,4 +78,4 @@ function mapStateToProps ({ authedUser }) {
   }
 }
 
-export default connect(mapStateToProps)(Nav)
+export default withRouter(connect(mapStateToProps)(Nav))
