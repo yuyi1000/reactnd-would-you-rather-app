@@ -25,9 +25,9 @@ class App extends Component {
           {/* <NewQuestion /> */}
           {/* <Leaderboard /> */}
           <Route path='/home' component={Home} />
-          <Route path='/login' component={Login} />
+          <Route path='/' exact component={Login} />
           <Route path='/leaderboard' component={Leaderboard} />
-          <Route path='/new' component={NewQuestion} />
+          <Route path='/add' component={NewQuestion} />
         </Fragment>
       </Router>
     )

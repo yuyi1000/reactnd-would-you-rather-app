@@ -11,12 +11,12 @@ class Nav extends Component {
         <nav>
           <ul>
             <li>
-              <NavLink to='/login' activeClassName='active'>
+              <NavLink to='/' activeClassName='active'>
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to='/login' activeClassName='active'>
+              <NavLink to='/' activeClassName='active'>
                 New Question
               </NavLink>
             </li>
@@ -31,9 +31,25 @@ class Nav extends Component {
     }
 
     return (
-      <div>
-        Nav, login.
-      </div>
+      <nav>
+        <ul>
+          <li>
+            <NavLink to='/home' activeClassName='active'>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/add' activeClassName='active'>
+              New Question
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/leaderboard' activeClassName='active'>
+              Leaderboard
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     )
 
   }

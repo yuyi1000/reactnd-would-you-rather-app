@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
+import { Redirect } from 'react-router-dom'
+
 
 class Login extends Component {
   state = {
@@ -27,9 +29,7 @@ class Login extends Component {
     if (authedUser) {
       // TODO: use redirect to home page
       return (
-        <h2>
-          you have already signed in. your name is {authedUser}
-        </h2>
+        <Redirect to='/home' />
       )
     }
 
