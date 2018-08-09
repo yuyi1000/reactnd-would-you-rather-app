@@ -20,14 +20,11 @@ class NewQuestion extends Component {
 
   handleSubmit = (e) => {
     console.log(this.props)
-    const { dispatch } = this.props
+    const { dispatch, authedUser } = this.props
     const { optionOneText, optionTwoText } = this.state
-    // TODO: hard coded auther here, change to a login user later.
-    const author = 'tylermcginnis'
     e.preventDefault()
-    dispatch(handleAddQuestion(optionOneText, optionTwoText, author))
+    dispatch(handleAddQuestion(optionOneText, optionTwoText, authedUser))
     console.log('new question has been submitted.')
-
   }
 
   render() {
@@ -45,4 +42,10 @@ class NewQuestion extends Component {
   }
 }
 
-export default connect()(NewQuestion)
+function mapStateToProps ({ authedUser }) {
+  return {
+    authedUser,
+  }
+}
+
+export default connect(mapStateToProps)(NewQuestion)
