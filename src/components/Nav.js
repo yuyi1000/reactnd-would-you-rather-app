@@ -60,7 +60,7 @@ class Nav extends Component {
             </NavLink>
           </li>
           <li>
-            Welcome {authedUser}
+            Welcome {authedUser}, 
             <NavLink to='/' onClick={this.handleLogout} activeClassName='active'>
               Logout
             </NavLink>
