@@ -22,12 +22,12 @@ class Nav extends Component {
         <nav>
           <ul>
             <li>
-              <NavLink to='/' activeClassName='active'>
+              <NavLink to='/home' activeClassName='active'>
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to='/' activeClassName='active'>
+              <NavLink to='/add' activeClassName='active'>
                 New Question
               </NavLink>
             </li>
@@ -60,7 +60,7 @@ class Nav extends Component {
             </NavLink>
           </li>
           <li>
-            Welcome {authedUser}, 
+            Welcome {authedUser},
             <NavLink to='/' onClick={this.handleLogout} activeClassName='active'>
               Logout
             </NavLink>

@@ -11,11 +11,12 @@ class Home extends Component {
   render() {
     const { authedUser } = this.props
     if (authedUser === null) {
+      alert('Please login first.')
       return (
         <Redirect to='/login' />
       )
     }
-    
+
     return (
       <AnsweredQuestions />
     )
