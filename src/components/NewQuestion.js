@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestion } from '../actions/questions'
+import { Redirect } from 'react-router-dom'
+
 
 class NewQuestion extends Component {
   state = {
@@ -28,6 +30,12 @@ class NewQuestion extends Component {
   }
 
   render() {
+    const { authedUser } = this.props
+    if (authedUser === null) {
+      return (
+        <Redirect to='/login' />
+      )
+    }
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
