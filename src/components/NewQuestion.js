@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestion } from '../actions/questions'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 
 
 class NewQuestion extends Component {
@@ -22,10 +22,15 @@ class NewQuestion extends Component {
 
   handleSubmit = (e) => {
     console.log(this.props)
-    const { dispatch, authedUser } = this.props
+    const { dispatch, authedUser, history } = this.props
     const { optionOneText, optionTwoText } = this.state
     e.preventDefault()
     dispatch(handleAddQuestion(optionOneText, optionTwoText, authedUser))
+    this.setState(() => ({
+      optionOne: '',
+      optionTwo: '',
+    }))
+    history.push('/home')
     console.log('new question has been submitted.')
   }
 
@@ -57,4 +62,4 @@ function mapStateToProps ({ authedUser }) {
   }
 }
 
-export default connect(mapStateToProps)(NewQuestion)
+export default withRouter(connect(mapStateToProps)(NewQuestion))
