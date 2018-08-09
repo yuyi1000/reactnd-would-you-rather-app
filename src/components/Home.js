@@ -7,9 +7,25 @@ import { Redirect } from 'react-router-dom'
 
 class Home extends Component {
 
+  state = {
+    showUnansweredQuestions: true,
+  }
+
+  jumpToUnansweredQuestions = () => {
+    this.setState({
+      showUnansweredQuestions: true,
+    })
+  }
+
+  jumpToAnsweredQuestions = () => {
+    this.setState({
+      showUnansweredQuestions: false,
+    })
+  }
 
   render() {
     const { authedUser } = this.props
+    const { showUnansweredQuestions } = this.state
     if (authedUser === null) {
       alert('Please login first.')
       return (
@@ -17,8 +33,20 @@ class Home extends Component {
       )
     }
 
+    const renderQuestions = showUnansweredQuestions ? <UnansweredQuestions /> : <AnsweredQuestions />
+
     return (
-      <AnsweredQuestions />
+      <div>
+        <nav>
+          <button onClick={this.jumpToUnansweredQuestions}>
+            Unanswered Questions
+          </button>
+          <button onClick={this.jumpToAnsweredQuestions}>
+            Answered Questions
+          </button>
+        </nav>
+        {renderQuestions}
+      </div>
     )
   }
 }

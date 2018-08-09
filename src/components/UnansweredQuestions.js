@@ -33,7 +33,7 @@ function mapStateToProps ({ questions }) {
 function getUnansweredQuestions (questions) {
   // TODO: set getTotalVote(questions[questionId]) === 0 later
   return Object.keys(questions)
-          .filter((questionId) => getTotalVote(questions[questionId]) !== 0)
+          .filter((questionId) => getTotalVote(questions[questionId]) === 0)
           .sort((id1, id2) => questions[id1].timestamp > questions[id2].timestamp)
           .reduce((obj, questionId) => {
             obj[questionId] = questions[questionId]
