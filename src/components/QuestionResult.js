@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 class QuestionResult extends Component {
 
   render() {
-    const { question } = this.props
+    const { question, authedUser } = this.props
+
+    if (authedUser === null) {
+      alert('Please login first.')
+      return (
+        <Redirect to='/login' />
+      )
+    }
 
     return (
       <div>
@@ -19,9 +27,11 @@ class QuestionResult extends Component {
 
 }
 
-function mapStateToProps ({ questions }, { questionId }) {
+function mapStateToProps ({ questions, authedUser }, { match }) {
+  const { question_id } = match.params
   return {
-    question: questions[questionId]
+    question: questions[question_id],
+    authedUser,
   }
 }
 

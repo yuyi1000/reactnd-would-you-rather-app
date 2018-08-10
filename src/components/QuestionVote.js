@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 
 class QuestionVote extends Component {
 
@@ -14,6 +14,11 @@ class QuestionVote extends Component {
     })
   }
 
+  handleSubmit = (e, id) => {
+    e.preventDefault()
+    this.props.history.push(`/questions/${id}`)
+  }
+
   render() {
     const { question, authedUser } = this.props
     const { selectedOption } = this.state
@@ -25,7 +30,7 @@ class QuestionVote extends Component {
     }
 
     return (
-      <form className='vote-form' onSubmit={this.handleSubmit}>
+      <form className='vote-form' onSubmit={(e) => this.handleSubmit(e, question.id)}>
         <div className="radio">
           <label>
             <input type="radio" value="optionOne" checked={selectedOption === 'optionOne'} onChange={this.handleOptionChange} />
@@ -52,4 +57,4 @@ function mapStateToProps ({ questions, authedUser }, { match }) {
   }
 }
 
-export default connect(mapStateToProps)(QuestionVote)
+export default withRouter(connect(mapStateToProps)(QuestionVote))
