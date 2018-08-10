@@ -11,6 +11,9 @@ class QuestionPreview extends Component {
         Name: {question.author},
         OptionOne: {question.optionOne.text},
         OptionTwo: {question.optionTwo.text}
+        <button>
+          View Poll
+        </button>
       </div>
     )
   }
