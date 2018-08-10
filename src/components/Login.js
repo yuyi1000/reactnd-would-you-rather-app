@@ -27,7 +27,6 @@ class Login extends Component {
     const { authedUser } = this.props
     console.log(authedUser);
     if (authedUser) {
-      // TODO: use redirect to home page
       return (
         <Redirect to='/home' />
       )
