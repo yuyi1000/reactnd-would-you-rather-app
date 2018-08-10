@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getTotalVote } from '../utils/api'
-// import UnansweredQuestion from './UnansweredQuestion'
 import QuestionPreview from './QuestionPreview'
 
 class UnansweredQuestions extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getTotalVote } from '../utils/api'
-import AnsweredQuestion from './AnsweredQuestion'
+import QuestionPreview from './QuestionPreview'
 
 class AnsweredQuestions extends Component {
 
@@ -15,7 +15,7 @@ class AnsweredQuestions extends Component {
         <ul>
           {Object.keys(answeredQuestions).map((questionId) => (
             <li key={questionId}>
-              <AnsweredQuestion questionId={questionId} />
+              <QuestionPreview questionId={questionId} />
             </li>
           ))}
 
@@ -36,6 +36,7 @@ function mapStateToProps ({ questions }) {
 function getAnseredQuestions (questions) {
   return Object.keys(questions)
           .filter((questionId) => getTotalVote(questions[questionId]) !== 0)
+          .sort((id1, id2) => questions[id1].timestamp > questions[id2].timestamp)
           .reduce((obj, questionId) => {
             obj[questionId] = questions[questionId]
             return obj
