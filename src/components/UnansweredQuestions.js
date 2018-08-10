@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getTotalVote } from '../utils/api'
-import UnansweredQuestion from './UnansweredQuestion'
+// import UnansweredQuestion from './UnansweredQuestion'
+import QuestionPreview from './QuestionPreview'
 
 class UnansweredQuestions extends Component {
 
@@ -13,7 +14,7 @@ class UnansweredQuestions extends Component {
         <ul>
           {Object.keys(unansweredQuestions).map((questionId) => (
             <li key={questionId}>
-              <UnansweredQuestion questionId={questionId} />
+              <QuestionPreview questionId={questionId} />
             </li>
           ))}
 
@@ -31,7 +32,6 @@ function mapStateToProps ({ questions }) {
 }
 
 function getUnansweredQuestions (questions) {
-  // TODO: set getTotalVote(questions[questionId]) === 0 later
   return Object.keys(questions)
           .filter((questionId) => getTotalVote(questions[questionId]) === 0)
           .sort((id1, id2) => questions[id1].timestamp > questions[id2].timestamp)
