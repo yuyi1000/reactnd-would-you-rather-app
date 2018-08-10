@@ -1,4 +1,5 @@
 import { saveQuestion } from '../utils/api'
+import { userAskQuestion } from './users'
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
@@ -24,6 +25,9 @@ export function handleAddQuestion (optionOneText, optionTwoText, author) {
       optionTwoText,
       author,
     })
-      .then((question) => dispatch(addQuestion(question)))
+      .then((question) => {
+        dispatch(addQuestion(question))
+        dispatch(userAskQuestion(author, question.id))
+      })
   }
 }
