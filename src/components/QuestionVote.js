@@ -14,9 +14,10 @@ class QuestionVote extends Component {
     })
   }
 
-  handleSubmit = (e, id) => {
+  handleSubmit = (e, authedUser, qid, answer) => {
     e.preventDefault()
-    this.props.history.push(`/questions/${id}`)
+    this.props.history.push(`/questions/${qid}`)
+
   }
 
   render() {
@@ -30,7 +31,7 @@ class QuestionVote extends Component {
     }
 
     return (
-      <form className='vote-form' onSubmit={(e) => this.handleSubmit(e, question.id)}>
+      <form className='vote-form' onSubmit={(e) => this.handleSubmit(e, authedUser, question.id, selectedOption)}>
         <div className="radio">
           <label>
             <input type="radio" value="optionOne" checked={selectedOption === 'optionOne'} onChange={this.handleOptionChange} />

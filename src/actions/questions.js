@@ -3,6 +3,7 @@ import { userAskQuestion } from './users'
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
+export const SAVE_QUESTION_VOTE = 'SAVE_QUESTION_VOTE'
 
 export function receiveQuestions (questions) {
   return {
@@ -17,6 +18,16 @@ function addQuestion (question) {
     question,
   }
 }
+
+function saveQuestionVote (authedUser, qid, vote) {
+  return {
+    type: SAVE_QUESTION_VOTE,
+    authedUser,
+    qid,
+    vote,
+  }
+}
+
 
 export function handleAddQuestion (optionOneText, optionTwoText, author) {
   return (dispatch) => {
