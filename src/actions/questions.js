@@ -19,12 +19,12 @@ function addQuestion (question) {
   }
 }
 
-function saveQuestionVote (authedUser, qid, vote) {
+function saveQuestionVote (authedUser, qid, answer) {
   return {
     type: SAVE_QUESTION_VOTE,
     authedUser,
     qid,
-    vote,
+    answer,
   }
 }
 
