@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect, withRouter } from 'react-router-dom'
+import { handleSaveQuestionAnswer } from '../actions/questions'
 
 class QuestionVote extends Component {
 
@@ -15,9 +16,10 @@ class QuestionVote extends Component {
   }
 
   handleSubmit = (e, authedUser, qid, answer) => {
+    const { dispatch } = this.props
     e.preventDefault()
+    dispatch(handleSaveQuestionAnswer(authedUser, qid, answer))
     this.props.history.push(`/questions/${qid}`)
-
   }
 
   render() {

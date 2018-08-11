@@ -13,10 +13,10 @@ export default function questions (state = {}, action) {
         [action.question.id]: {...action.question}
       }
     case SAVE_QUESTION_VOTE :
-    const { authedUser, qid, answer } = action
+      const { authedUser, qid, answer } = action
       return {
         ...state,
-        [state.qid]: {
+        [qid]: {
           ...state[qid],
           [answer]: {
             ...state[qid][answer],
