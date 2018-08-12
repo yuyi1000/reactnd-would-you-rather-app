@@ -12,7 +12,7 @@ export function receiveQuestions (questions) {
   }
 }
 
-function addQuestion (question) {
+export function addQuestion (question) {
   return {
     type: ADD_QUESTION,
     question,
@@ -43,16 +43,16 @@ export function saveQuestionVote (authedUser, qid, answer) {
 // }
 
 
-export function handleAddQuestion (optionOneText, optionTwoText, author) {
-  return (dispatch) => {
-    return saveQuestion({
-      optionOneText,
-      optionTwoText,
-      author,
-    })
-      .then((question) => {
-        dispatch(addQuestion(question))
-        dispatch(userAskQuestion(author, question.id))
-      })
-  }
-}
+// export function handleAddQuestion (optionOneText, optionTwoText, author) {
+//   return (dispatch) => {
+//     return saveQuestion({
+//       optionOneText,
+//       optionTwoText,
+//       author,
+//     })
+//       .then((question) => {
+//         dispatch(addQuestion(question))
+//         dispatch(userAskQuestion(author, question.id))
+//       })
+//   }
+// }

@@ -1,6 +1,6 @@
-import { getInitalData, saveQuestionAnswer } from '../utils/api'
-import { receiveUsers, userSaveQuestion } from './users'
-import { receiveQuestions, saveQuestionVote } from './questions'
+import { getInitalData, saveQuestionAnswer, saveQuestion } from '../utils/api'
+import { receiveUsers, userSaveQuestion, userAskQuestion } from './users'
+import { receiveQuestions, saveQuestionVote, addQuestion } from './questions'
 
 export function handleInitalData () {
   return (dispatch) => {
@@ -23,6 +23,20 @@ export function handleSaveQuestionAnswer (authedUser, qid, answer) {
       .then(() => {
         dispatch(saveQuestionVote(authedUser, qid, answer))
         dispatch(userSaveQuestion(authedUser, qid, answer))
+      })
+  }
+}
+
+export function handleAddQuestion (optionOneText, optionTwoText, author) {
+  return (dispatch) => {
+    return saveQuestion({
+      optionOneText,
+      optionTwoText,
+      author,
+    })
+      .then((question) => {
+        dispatch(addQuestion(question))
+        dispatch(userAskQuestion(author, question.id))
       })
   }
 }
