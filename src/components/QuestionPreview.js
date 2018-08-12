@@ -5,20 +5,25 @@ import { withRouter } from 'react-router-dom'
 
 class QuestionPreview extends Component {
 
-  showQuestionVote = (e, id) => {
+  showQuestionDetail = (e, id, isAnswered) => {
+    const { history } = this.props
     e.preventDefault()
-    this.props.history.push(`/vote/${id}`)
+    if (isAnswered) {
+      history.push(`/questions/${id}`)
+    } else {
+      history.push(`/vote/${id}`)
+    }
   }
 
   render() {
-    const { question } = this.props
+    const { question, isAnswered } = this.props
 
     return (
       <div>
         Name: {question.author},
         OptionOne: {question.optionOne.text},
         OptionTwo: {question.optionTwo.text}
-        <button onClick={(e) => this.showQuestionVote(e, question.id)}>
+        <button onClick={(e) => this.showQuestionDetail(e, question.id, isAnswered)}>
           View Poll
         </button>
       </div>
@@ -26,10 +31,12 @@ class QuestionPreview extends Component {
   }
 }
 
-function mapStateToProps ({ questions, authedUser }, { questionId }) {
-  
+function mapStateToProps ({ questions, authedUser, users }, { questionId }) {
+  const answeredQuestions = Object.keys(users[authedUser].answers)
+  const isAnswered = answeredQuestions.includes(questionId)
   return {
-    question: questions[questionId]
+    question: questions[questionId],
+    isAnswered,
   }
 }
 
