@@ -1,5 +1,5 @@
 import { saveQuestion, saveQuestionAnswer } from '../utils/api'
-import { userAskQuestion } from './users'
+import { userAskQuestion, userSaveQuestion } from './users'
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
@@ -37,6 +37,7 @@ export function handleSaveQuestionAnswer (authedUser, qid, answer) {
     })
       .then(() => {
         dispatch(saveQuestionVote(authedUser, qid, answer))
+        dispatch(userSaveQuestion(authedUser, qid, answer))
       })
   }
 }
