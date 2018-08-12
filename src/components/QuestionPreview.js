@@ -26,7 +26,8 @@ class QuestionPreview extends Component {
   }
 }
 
-function mapStateToProps ({ questions }, { questionId }) {
+function mapStateToProps ({ questions, authedUser }, { questionId }) {
+  
   return {
     question: questions[questionId]
   }
