@@ -43,11 +43,11 @@ class NewQuestion extends Component {
       )
     }
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className='new-question' onSubmit={this.handleSubmit}>
         <label>
-          Would you rather:
+          <p><b>Would you rather:</b></p>
           <input type="text" value={this.state.value} onChange={this.handleOptionOneTextChange} />
-          OR
+          <br/>OR<br/>
           <input type="text" value={this.state.value} onChange={this.handleOptionTwoTextChange} />
         </label>
         <input type="submit" value="Submit" />

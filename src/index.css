@@ -86,3 +86,9 @@ li {
   width: 80%;
   color: green;
 }
+
+.new-question {
+  border: solid 2px;
+  max-width: 400px;
+  margin-left: 2em;
+}
