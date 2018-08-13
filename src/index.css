@@ -92,3 +92,12 @@ li {
   max-width: 400px;
   margin-left: 2em;
 }
+
+.new-question-form {
+  padding: 2em;
+}
+
+.new-question-submit {
+  background: green;
+  color: white;
+}

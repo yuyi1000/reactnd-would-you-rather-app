@@ -43,15 +43,18 @@ class NewQuestion extends Component {
       )
     }
     return (
-      <form className='new-question' onSubmit={this.handleSubmit}>
-        <label>
-          <p><b>Would you rather:</b></p>
-          <input type="text" value={this.state.value} onChange={this.handleOptionOneTextChange} />
-          <br/>OR<br/>
-          <input type="text" value={this.state.value} onChange={this.handleOptionTwoTextChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div className='new-question'>
+        <form className='new-question-form' onSubmit={this.handleSubmit}>
+          <label>
+            <p><b>Would you rather:</b></p>
+            <input type="text" value={this.state.value} onChange={this.handleOptionOneTextChange} />
+            <br/>OR<br/>
+            <input type="text" value={this.state.value} onChange={this.handleOptionTwoTextChange} />
+          </label>
+          <br/>
+          <input className='new-question-submit' type="submit" value="Submit" />
+        </form>
+      </div>
     )
   }
 }

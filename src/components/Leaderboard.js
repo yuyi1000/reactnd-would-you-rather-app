@@ -6,26 +6,19 @@ import { getUserScore } from '../utils/api'
 class Leaderboard extends Component {
 
   render() {
-
     const { userIds } = this.props
-
     return (
-
       <div>
-
         <ul>
           {userIds.map((userId) => (
             <li key={userId}>
               <Score userId={userId} />
             </li>
           ))}
-
         </ul>
-
       </div>
     )
   }
-
 }
 
 function mapStateToProps ({ users }) {
@@ -34,6 +27,5 @@ function mapStateToProps ({ users }) {
       .sort((a, b) => getUserScore(users[b]) - getUserScore(users[a]))
   }
 }
-
 
 export default connect(mapStateToProps)(Leaderboard)
