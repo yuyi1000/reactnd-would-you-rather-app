@@ -33,17 +33,17 @@ class Login extends Component {
     }
 
     return (
-      <form className='sign-in-form' onSubmit={this.handleSubmit}>
-        <label className='sign-in-label'>
-          Sign in
-          <select  value={this.state.value} onChange={this.handleChange}>
+
+      <div className='sign-in-form'>
+        <form onSubmit={this.handleSubmit}>
+          <select value={this.state.value} onChange={this.handleChange}>
             <option value="sarahedo">Sarah Edo</option>
             <option value="tylermcginnis">Tyler McGinnis</option>
             <option value="johndoe">John Doe</option>
           </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+          <input type="submit" value="Sign in" />
+        </form>
+      </div>
     )
   }
 }
