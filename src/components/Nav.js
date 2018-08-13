@@ -63,7 +63,7 @@ class Nav extends Component {
           </li>
           <li>
             Hello {name}
-            <img src={avatarURL} width='20px' />
+            <img src={avatarURL} />
             <NavLink to='/' onClick={this.handleLogout} activeClassName='active'>
               Logout
             </NavLink>

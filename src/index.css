@@ -11,6 +11,10 @@ body {
   text-decoration: none;
 }
 
+.nav img {
+  width: 30px;
+  padding: 5px;
+}
 
 ul {
   padding-left: 0;
