@@ -59,5 +59,17 @@ li {
 
 .question-preview {
   border: solid 1px;
-  
+
+}
+
+.question-preview-name {
+
+}
+
+.question-preview-avatar {
+  /* width: 30px; */
+}
+
+.question-preview-avatar img {
+  width: 30px;
 }
