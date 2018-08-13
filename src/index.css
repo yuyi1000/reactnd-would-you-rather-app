@@ -34,9 +34,11 @@ li {
   display: block;
   background-color: green;
   color: white;
-  width: 100px;
+  width: 200px;
+  font-size: medium;
 }
 
 .sign-in-form select {
-
+  width: 200px;
+  font-size: small;
 }
