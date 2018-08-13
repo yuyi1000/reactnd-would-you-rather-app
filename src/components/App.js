@@ -24,9 +24,6 @@ class App extends Component {
       <Router>
         <Fragment>
           <Nav />
-          {/* <Login /> */}
-          {/* <NewQuestion /> */}
-          {/* <Leaderboard /> */}
           <Switch>
             <Route path='/home' component={Home} />
             <Route path='/' exact component={Login} />

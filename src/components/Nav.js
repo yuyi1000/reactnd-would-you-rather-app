@@ -19,7 +19,7 @@ class Nav extends Component {
     const { authedUser } = this.props
     if (authedUser === null) {
       return (
-        <nav>
+        <nav className='nav'>
           <ul>
             <li>
               <NavLink to='/home' activeClassName='active'>
@@ -42,7 +42,7 @@ class Nav extends Component {
     }
 
     return (
-      <nav>
+      <nav className='nav'>
         <ul>
           <li>
             <NavLink to='/home' activeClassName='active'>
