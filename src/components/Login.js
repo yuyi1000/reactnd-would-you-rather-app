@@ -33,16 +33,21 @@ class Login extends Component {
     }
 
     return (
-
-      <div className='sign-in-form'>
-        <form onSubmit={this.handleSubmit}>
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="sarahedo">Sarah Edo</option>
-            <option value="tylermcginnis">Tyler McGinnis</option>
-            <option value="johndoe">John Doe</option>
-          </select>
-          <input type="submit" value="Sign in" />
-        </form>
+      <div>
+        <div className='sign-in-direction'>
+          Welcome to Would You Rather App. <br/>
+          Please sign in to continue.
+        </div>
+        <div className='sign-in-form'>
+          <form onSubmit={this.handleSubmit}>
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value="sarahedo">Sarah Edo</option>
+              <option value="tylermcginnis">Tyler McGinnis</option>
+              <option value="johndoe">John Doe</option>
+            </select>
+            <input type="submit" value="Sign in" />
+          </form>
+        </div>
       </div>
     )
   }

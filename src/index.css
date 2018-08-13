@@ -22,6 +22,10 @@ li {
   text-decoration: none;
 }
 
+.sign-in-direction {
+  padding-left: 1em;
+}
+
 .sign-in-form {
   padding: 1em;
 }
