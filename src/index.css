@@ -52,3 +52,7 @@ li {
   max-width: 400px;
   margin-left: 2em;
 }
+
+.home-view button {
+  width: 50%;
+}
