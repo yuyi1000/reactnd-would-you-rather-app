@@ -40,6 +40,7 @@ class Nav extends Component {
         </nav>
       )
     }
+
     const userName = users[authedUser].name
 
     return (
@@ -62,6 +63,7 @@ class Nav extends Component {
           </li>
           <li>
             Hello {userName},
+            <img src="https://tylermcginnis.com/would-you-rather/sarah.jpg" width='20px' />
             <NavLink to='/' onClick={this.handleLogout} activeClassName='active'>
               Logout
             </NavLink>
