@@ -39,10 +39,10 @@ class Home extends Component {
     return (
       <div className='home-view'>
         <nav>
-          <button onClick={this.jumpToUnansweredQuestions}>
+          <button className='home-nav' onClick={this.jumpToUnansweredQuestions}>
             Unanswered Questions
           </button>
-          <button onClick={this.jumpToAnsweredQuestions}>
+          <button className='home-nav' onClick={this.jumpToAnsweredQuestions}>
             Answered Questions
           </button>
         </nav>

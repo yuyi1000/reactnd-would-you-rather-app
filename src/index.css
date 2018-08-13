@@ -53,6 +53,11 @@ li {
   margin-left: 2em;
 }
 
-.home-view button {
+.home-nav {
   width: 50%;
+}
+
+.question-preview {
+  border: solid 1px;
+  
 }

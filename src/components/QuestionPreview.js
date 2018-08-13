@@ -19,7 +19,7 @@ class QuestionPreview extends Component {
     const { question, isAnswered } = this.props
 
     return (
-      <div>
+      <div className='question-preview'>
         Name: {question.author},
         OptionOne: {question.optionOne.text},
         OptionTwo: {question.optionTwo.text}
