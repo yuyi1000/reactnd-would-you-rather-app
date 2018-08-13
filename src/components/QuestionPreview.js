@@ -23,15 +23,17 @@ class QuestionPreview extends Component {
         <div className='question-preview-name'>
           {name} asks: <br/>
         </div>
-        <div className='question-preview-avatar'>
-          <img src={avatarURL} />
-        </div>
-        <div className='question-preview-options'>
-          OptionOne: {question.optionOne.text},
-          OptionTwo: {question.optionTwo.text}
-          <button onClick={(e) => this.showQuestionDetail(e, question.id, isAnswered)}>
-            View Poll
-          </button>
+        <div>
+          <div className='question-preview-avatar'>
+            <img src={avatarURL} />
+          </div>
+          <div className='question-preview-options'>
+            OptionOne: {question.optionOne.text},
+            OptionTwo: {question.optionTwo.text}
+            <button onClick={(e) => this.showQuestionDetail(e, question.id, isAnswered)}>
+              View Poll
+            </button>
+          </div>
         </div>
 
       </div>

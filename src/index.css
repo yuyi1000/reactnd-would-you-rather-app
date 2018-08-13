@@ -67,9 +67,17 @@ li {
 }
 
 .question-preview-avatar {
-  /* width: 30px; */
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1em;
 }
 
 .question-preview-avatar img {
   width: 30px;
+}
+
+.question-preview-options {
+  width: 80%;
+  display: inline-block;
 }
