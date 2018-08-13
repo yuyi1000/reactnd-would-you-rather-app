@@ -28,8 +28,8 @@ class QuestionPreview extends Component {
             <img src={avatarURL} />
           </div>
           <div className='question-preview-options'>
-            OptionOne: {question.optionOne.text},
-            OptionTwo: {question.optionTwo.text}
+            <b>Would you rather</b><br/>
+            ...{question.optionOne.text.substring(0, 20)}... <br/>
             <button onClick={(e) => this.showQuestionDetail(e, question.id, isAnswered)}>
               View Poll
             </button>

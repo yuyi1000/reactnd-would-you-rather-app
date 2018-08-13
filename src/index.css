@@ -81,3 +81,8 @@ li {
   width: 80%;
   display: inline-block;
 }
+
+.question-preview-options button {
+  width: 80%;
+  color: green;
+}
