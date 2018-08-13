@@ -101,3 +101,39 @@ li {
   background: green;
   color: white;
 }
+
+.leaderboard {
+  border: solid 2px;
+  max-width: 400px;
+  margin-left: 2em;
+}
+
+.user-score {
+  border: solid 1px;
+  /* max-width: 400px; */
+  /* margin-left: 2em; */
+}
+
+.user-score-avatar {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1em;
+}
+
+.user-score-avatar img {
+  width: 30px;
+}
+
+.user-score-statistics {
+  display: inline-block;
+  width: 50%;
+}
+
+.user-score-points {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  padding: 1em;
+  color: green
+}

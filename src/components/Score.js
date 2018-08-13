@@ -2,22 +2,27 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getUserScore, getNumberOfAnseredQuestions, getNumberOfCreatedQuestions } from '../utils/api'
 
-
 class Score extends Component {
 
   render() {
     const { user } = this.props
-
+    const { name, avatarURL } = user
     return (
-      <h2>
-        we have a user {user.name},
-        Answered questions: {getNumberOfAnseredQuestions(user)},
-        Created quetions: {getNumberOfCreatedQuestions(user)}, 
-        Total score: {getUserScore(user)}
-      </h2>
+      <div className='user-score'>
+        <div className='user-score-avatar'>
+          <img src={avatarURL} />
+        </div>
+        <div className='user-score-statistics'>
+          <p>{name}</p>
+          <p>Answered question: {getNumberOfAnseredQuestions(user)}</p>
+          <p>Created quetions: {getNumberOfCreatedQuestions(user)}</p>
+        </div>
+        <div className='user-score-points'>
+          Score: {getUserScore(user)}
+        </div>
+      </div>
     )
   }
-
 }
 
 function mapStateToProps ({users}, {userId}) {
@@ -26,6 +31,5 @@ function mapStateToProps ({users}, {userId}) {
     user,
   }
 }
-
 
 export default connect(mapStateToProps)(Score)

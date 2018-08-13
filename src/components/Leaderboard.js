@@ -8,7 +8,7 @@ class Leaderboard extends Component {
   render() {
     const { userIds } = this.props
     return (
-      <div>
+      <div className='leaderboard'>
         <ul>
           {userIds.map((userId) => (
             <li key={userId}>
