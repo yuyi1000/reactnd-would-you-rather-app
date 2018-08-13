@@ -6,9 +6,8 @@ class QuestionResult extends Component {
 
   render() {
     const { question, authedUser } = this.props
-
     if (authedUser === null) {
-      alert('Please login first.')
+      alert('There is something wrong. Please login first.')
       return (
         <Redirect to='/login' />
       )
