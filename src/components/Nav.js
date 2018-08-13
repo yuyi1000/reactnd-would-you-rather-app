@@ -16,7 +16,7 @@ class Nav extends Component {
   }
 
   render() {
-    const { authedUser } = this.props
+    const { authedUser, users } = this.props
     if (authedUser === null) {
       return (
         <nav className='nav'>
@@ -40,6 +40,7 @@ class Nav extends Component {
         </nav>
       )
     }
+    const userName = users[authedUser].name
 
     return (
       <nav className='nav'>
@@ -60,7 +61,7 @@ class Nav extends Component {
             </NavLink>
           </li>
           <li>
-            Welcome {authedUser},
+            Hello {userName},
             <NavLink to='/' onClick={this.handleLogout} activeClassName='active'>
               Logout
             </NavLink>
@@ -72,9 +73,10 @@ class Nav extends Component {
   }
 }
 
-function mapStateToProps ({ authedUser }) {
+function mapStateToProps ({ authedUser, users }) {
   return {
     authedUser,
+    users,
   }
 }
 
