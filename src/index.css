@@ -46,3 +46,9 @@ li {
   width: 200px;
   font-size: small;
 }
+
+.home-view {
+  border: solid 2px;
+  max-width: 400px;
+  margin-left: 2em;
+}

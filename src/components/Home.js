@@ -30,14 +30,14 @@ class Home extends Component {
       alert('Please login first.')
       return (
         <Redirect to='/login' />
-        
+
       )
     }
 
     const renderQuestions = showUnansweredQuestions ? <UnansweredQuestions /> : <AnsweredQuestions />
 
     return (
-      <div>
+      <div className='home-view'>
         <nav>
           <button onClick={this.jumpToUnansweredQuestions}>
             Unanswered Questions
