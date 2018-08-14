@@ -42,6 +42,7 @@ class Nav extends Component {
     }
 
     const { name, avatarURL } = users[authedUser]
+    const imgAlt = `avatar of ${name}`
 
     return (
       <nav className='nav'>
@@ -63,7 +64,7 @@ class Nav extends Component {
           </li>
           <li>
             Hello {name}
-            <img src={avatarURL} />
+            <img src={avatarURL} alt={imgAlt} />
             <NavLink to='/' onClick={this.handleLogout} activeClassName='active'>
               Logout
             </NavLink>

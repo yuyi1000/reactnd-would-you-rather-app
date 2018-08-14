@@ -33,6 +33,7 @@ class QuestionVote extends Component {
     }
 
     const { name, avatarURL } = users[question.author]
+    const imgAlt = `avatar of ${name}`
 
     return (
       <div className='question-vote'>
@@ -41,7 +42,7 @@ class QuestionVote extends Component {
         </div>
         <div>
           <div className='question-vote-avatar'>
-            <img src={avatarURL} />
+            <img src={avatarURL} alt={imgAlt} />
           </div>
           <div className='question-vote-options'>
             <form onSubmit={(e) => this.handleSubmit(e, authedUser, question.id, selectedOption)}>

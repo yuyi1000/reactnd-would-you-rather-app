@@ -18,7 +18,6 @@ class Login extends Component {
     const { dispatch } = this.props
     const authedUserId = this.state.name
     e.preventDefault()
-    console.log(this.state.name)
     dispatch(setAuthedUser(authedUserId))
   }
 
