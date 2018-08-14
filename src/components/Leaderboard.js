@@ -2,11 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Score from './Score'
 import { getUserScore } from '../utils/api'
+import { Redirect } from 'react-router-dom'
 
 class Leaderboard extends Component {
 
   render() {
-    const { userIds } = this.props
+    const { userIds, authedUser } = this.props
+    if (authedUser === null) {
+      alert('Please login first.')
+      return (
+        <Redirect to='/login' />
+      )
+    }
     return (
       <div className='leaderboard'>
         <ul>
@@ -21,10 +28,12 @@ class Leaderboard extends Component {
   }
 }
 
-function mapStateToProps ({ users }) {
+function mapStateToProps ({ users, authedUser }) {
+  const userIds = Object.keys(users)
+                  .sort((a, b) => getUserScore(users[b]) - getUserScore(users[a]))
   return {
-    userIds: Object.keys(users)
-      .sort((a, b) => getUserScore(users[b]) - getUserScore(users[a]))
+    userIds,
+    authedUser,
   }
 }
 

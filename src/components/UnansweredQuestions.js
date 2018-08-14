@@ -9,16 +9,13 @@ class UnansweredQuestions extends Component {
     const { unansweredQuestions } = this.props
     return (
       <div>
-
         <ul>
           {Object.keys(unansweredQuestions).map((questionId) => (
             <li key={questionId}>
               <QuestionPreview questionId={questionId} />
             </li>
           ))}
-
         </ul>
-
       </div>
     )
   }

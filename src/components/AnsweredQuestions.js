@@ -11,16 +11,13 @@ class AnsweredQuestions extends Component {
 
     return (
       <div>
-
         <ul>
           {Object.keys(answeredQuestions).map((questionId) => (
             <li key={questionId}>
               <QuestionPreview questionId={questionId} />
             </li>
           ))}
-
         </ul>
-
       </div>
     )
   }

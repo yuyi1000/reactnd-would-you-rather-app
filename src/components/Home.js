@@ -30,7 +30,6 @@ class Home extends Component {
       alert('Please login first.')
       return (
         <Redirect to='/login' />
-
       )
     }
 
