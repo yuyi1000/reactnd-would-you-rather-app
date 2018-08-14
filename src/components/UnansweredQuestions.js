@@ -34,7 +34,7 @@ function getUnansweredQuestions (questions, users, authedUser) {
   const answeredQuestions = Object.keys(users[authedUser].answers)
   return Object.keys(questions)
           .filter((questionId) => !answeredQuestions.includes(questionId))
-          .sort((id1, id2) => questions[id1].timestamp > questions[id2].timestamp)
+          .sort((id1, id2) => questions[id1].timestamp < questions[id2].timestamp)
           .reduce((obj, questionId) => {
             obj[questionId] = questions[questionId]
             return obj
