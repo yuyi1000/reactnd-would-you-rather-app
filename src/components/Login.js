@@ -33,7 +33,7 @@ class Login extends Component {
     }
 
     return (
-      <div>
+      <div className='sign-in'>
         <div className='sign-in-direction'>
           Welcome to Would You Rather App. <br/>
           Please sign in to continue.

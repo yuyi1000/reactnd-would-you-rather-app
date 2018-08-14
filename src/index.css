@@ -26,6 +26,12 @@ li {
   text-decoration: none;
 }
 
+.sign-in {
+  border: solid 2px;
+  max-width: 400px;
+  margin-left: 2em;
+}
+
 .sign-in-direction {
   padding-left: 1em;
 }
