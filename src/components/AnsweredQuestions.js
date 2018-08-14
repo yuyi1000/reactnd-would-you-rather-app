@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getTotalVote } from '../utils/api'
 import QuestionPreview from './QuestionPreview'
 
 class AnsweredQuestions extends Component {
 
   render() {
-
     const { answeredQuestions } = this.props
-
     return (
       <div>
         <ul>
