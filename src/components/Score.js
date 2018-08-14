@@ -7,10 +7,11 @@ class Score extends Component {
   render() {
     const { user } = this.props
     const { name, avatarURL } = user
+    const avatarAlt = `avatar of ${name}`
     return (
       <div className='user-score'>
         <div className='user-score-avatar'>
-          <img src={avatarURL} />
+          <img src={avatarURL} alt={avatarAlt} />
         </div>
         <div className='user-score-statistics'>
           <p>{name}</p>
