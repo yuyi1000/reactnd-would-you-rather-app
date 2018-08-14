@@ -186,5 +186,6 @@ li {
 }
 
 .question-result-detail {
-  
+  margin: 3px;
+  border: solid 1px;
 }
