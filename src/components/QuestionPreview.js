@@ -17,6 +17,7 @@ class QuestionPreview extends Component {
 
   render() {
     const { question, isAnswered, name, avatarURL } = this.props
+    const imgAlt = `avatar of ${name}`
 
     return (
       <div className='question-preview'>
@@ -25,7 +26,7 @@ class QuestionPreview extends Component {
         </div>
         <div>
           <div className='question-preview-avatar'>
-            <img src={avatarURL} />
+            <img src={avatarURL} alt={imgAlt} />
           </div>
           <div className='question-preview-options'>
             <b>Would you rather</b><br/>

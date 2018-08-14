@@ -20,6 +20,7 @@ class QuestionResult extends Component {
     const numberOfTotal = numberOfOptionOne + numberOfOptionTwo
     const chooseOptionOne = question.optionOne.votes.includes(authedUser)
     const yourVote = <b>YOUR VOTE</b>
+    const imgAlt = `avatar of ${name}`
 
     return (
       <div className='question-result'>
@@ -28,7 +29,7 @@ class QuestionResult extends Component {
         </div>
         <div>
           <div className='question-result-avatar'>
-            <img src={avatarURL} />
+            <img src={avatarURL} alt={imgAlt} />
           </div>
           <div className='question-result-details'>
             <p>Results:</p>
