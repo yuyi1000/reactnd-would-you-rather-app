@@ -13,6 +13,10 @@ class QuestionResult extends Component {
       )
     }
 
+    const numberOfOptionOne = question.optionOne.votes.length
+    const numberOfOptionTwo = question.optionTwo.votes.length
+    const numberOfTotal = numberOfOptionOne + numberOfOptionTwo
+
     return (
       <div className='question-result'>
         <div className='question-result-name'>
@@ -23,15 +27,20 @@ class QuestionResult extends Component {
             <img src={avatarURL} />
           </div>
           <div className='question-result-details'>
-            OptionOne: {question.optionOne.text},
-            NumberOfOptionOne: {question.optionOne.votes.length},
-            OptionTwo: {question.optionTwo.text},
-            NumberOfOptionTwo: {question.optionTwo.votes.length}
+            <p>Results:</p>
+            <div className='question-result-detail'>
+              Would you rather {question.optionOne.text} <br/>
+              Percentage: {(numberOfOptionOne / numberOfTotal * 100).toFixed()}% <br/>
+              {numberOfOptionOne} out of {numberOfTotal} votes <br/>
+            </div>
+            <div className='question-result-detail'>
+              Would you rather {question.optionTwo.text} <br/>
+              Percentage: {(numberOfOptionTwo / numberOfTotal * 100).toFixed()}% <br/>
+              {numberOfOptionTwo} out of {numberOfTotal} votes <br/>
+            </div>
           </div>
         </div>
-
       </div>
-
     )
   }
 
