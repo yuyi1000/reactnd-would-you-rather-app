@@ -21,7 +21,6 @@ class NewQuestion extends Component {
   }
 
   handleSubmit = (e) => {
-    console.log(this.props)
     const { dispatch, authedUser, history } = this.props
     const { optionOneText, optionTwoText } = this.state
     e.preventDefault()
@@ -31,7 +30,6 @@ class NewQuestion extends Component {
       optionTwo: '',
     }))
     history.push('/home')
-    console.log('new question has been submitted.')
   }
 
   render() {

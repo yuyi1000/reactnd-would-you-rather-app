@@ -23,9 +23,7 @@ class Login extends Component {
   }
 
   render() {
-    console.log(this.props)
     const { authedUser } = this.props
-    console.log(authedUser);
     if (authedUser) {
       return (
         <Redirect to='/home' />
