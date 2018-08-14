@@ -18,6 +18,8 @@ class QuestionResult extends Component {
     const numberOfOptionOne = question.optionOne.votes.length
     const numberOfOptionTwo = question.optionTwo.votes.length
     const numberOfTotal = numberOfOptionOne + numberOfOptionTwo
+    const chooseOptionOne = question.optionOne.votes.includes(authedUser)
+    const yourVote = <b>YOUR VOTE</b>
 
     return (
       <div className='question-result'>
@@ -34,11 +36,13 @@ class QuestionResult extends Component {
               Would you rather {question.optionOne.text} <br/>
               Percentage: {(numberOfOptionOne / numberOfTotal * 100).toFixed()}% <br/>
               {numberOfOptionOne} out of {numberOfTotal} votes <br/>
+              {chooseOptionOne && yourVote}
             </div>
             <div className='question-result-detail'>
               Would you rather {question.optionTwo.text} <br/>
               Percentage: {(numberOfOptionTwo / numberOfTotal * 100).toFixed()}% <br/>
               {numberOfOptionTwo} out of {numberOfTotal} votes <br/>
+              {!chooseOptionOne && yourVote}
             </div>
           </div>
         </div>
