@@ -23,7 +23,7 @@ class QuestionVote extends Component {
   }
 
   render() {
-    const { question, authedUser, name, avatarURL } = this.props
+    const { question, authedUser, users } = this.props
     const { selectedOption } = this.state
     if (authedUser === null) {
       alert('Please login first.')
@@ -31,6 +31,8 @@ class QuestionVote extends Component {
         <Redirect to='/login' />
       )
     }
+
+    const { name, avatarURL } = users[question.author]
 
     return (
       <div className='question-vote'>
@@ -66,12 +68,10 @@ class QuestionVote extends Component {
 
 function mapStateToProps ({ questions, authedUser, users }, { match }) {
   const { question_id } = match.params
-  const { name, avatarURL } = users[questions[question_id].author]
   return {
     question: questions[question_id],
     authedUser,
-    name,
-    avatarURL,
+    users,
   }
 }
 

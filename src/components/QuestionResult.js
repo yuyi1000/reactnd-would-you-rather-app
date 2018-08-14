@@ -5,13 +5,15 @@ import { Redirect } from 'react-router-dom'
 class QuestionResult extends Component {
 
   render() {
-    const { question, authedUser, name, avatarURL } = this.props
+    const { question, authedUser, users } = this.props
     if (authedUser === null) {
-      alert('There is something wrong. Please login first.')
+      alert('Please login first.')
       return (
         <Redirect to='/login' />
       )
     }
+
+    const { name, avatarURL } = users[question.author]
 
     const numberOfOptionOne = question.optionOne.votes.length
     const numberOfOptionTwo = question.optionTwo.votes.length
@@ -43,18 +45,15 @@ class QuestionResult extends Component {
       </div>
     )
   }
-
 }
 
 function mapStateToProps ({ questions, authedUser, users }, { match }) {
   const { question_id } = match.params
   const question = questions[question_id]
-  const { name, avatarURL } = users[question.author]
   return {
     question,
     authedUser,
-    name,
-    avatarURL,
+    users,
   }
 }
 
