@@ -110,8 +110,6 @@ li {
 
 .user-score {
   border: solid 1px;
-  /* max-width: 400px; */
-  /* margin-left: 2em; */
 }
 
 .user-score-avatar {
@@ -136,4 +134,30 @@ li {
   vertical-align: top;
   padding: 1em;
   color: green
+}
+
+.question-vote {
+  border: solid 2px;
+  max-width: 400px;
+  margin-left: 2em;
+}
+
+.question-vote-name {
+
+}
+
+.question-vote-avatar {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1em;
+}
+
+.question-vote-avatar img {
+  width: 30px;
+}
+
+.question-vote-options {
+  width: 80%;
+  display: inline-block;
 }

@@ -23,7 +23,7 @@ class QuestionVote extends Component {
   }
 
   render() {
-    const { question, authedUser } = this.props
+    const { question, authedUser, name, avatarURL } = this.props
     const { selectedOption } = this.state
     if (authedUser === null) {
       alert('Please login first.')
@@ -33,30 +33,45 @@ class QuestionVote extends Component {
     }
 
     return (
-      <form className='vote-form' onSubmit={(e) => this.handleSubmit(e, authedUser, question.id, selectedOption)}>
-        <div className="radio">
-          <label>
-            <input type="radio" value="optionOne" checked={selectedOption === 'optionOne'} onChange={this.handleOptionChange} />
-            {question.optionOne.text}
-          </label>
+      <div className='question-vote'>
+        <div className='question-vote-name'>
+          {name} asks: <br/>
         </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value="optionTwo" checked={selectedOption === 'optionTwo'} onChange={this.handleOptionChange} />
-            {question.optionTwo.text}
-          </label>
+        <div>
+          <div className='question-vote-avatar'>
+            <img src={avatarURL} />
+          </div>
+          <div className='question-vote-options'>
+            <form onSubmit={(e) => this.handleSubmit(e, authedUser, question.id, selectedOption)}>
+              <div className="radio">
+                <label>
+                  <input type="radio" value="optionOne" checked={selectedOption === 'optionOne'} onChange={this.handleOptionChange} />
+                  {question.optionOne.text}
+                </label>
+              </div>
+              <div className="radio">
+                <label>
+                  <input type="radio" value="optionTwo" checked={selectedOption === 'optionTwo'} onChange={this.handleOptionChange} />
+                  {question.optionTwo.text}
+                </label>
+              </div>
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
         </div>
-        <input type="submit" value="Submit" />
-      </form>
+      </div>
     )
   }
 }
 
-function mapStateToProps ({ questions, authedUser }, { match }) {
+function mapStateToProps ({ questions, authedUser, users }, { match }) {
   const { question_id } = match.params
+  const { name, avatarURL } = users[questions[question_id].author]
   return {
     question: questions[question_id],
     authedUser,
+    name,
+    avatarURL,
   }
 }
 
