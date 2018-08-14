@@ -161,3 +161,26 @@ li {
   width: 80%;
   display: inline-block;
 }
+
+
+.question-result {
+  border: solid 2px;
+  max-width: 400px;
+  margin-left: 2em;
+}
+
+.question-result-avatar {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1em;
+}
+
+.question-result-avatar img {
+  width: 30px;
+}
+
+.question-result-details {
+  width: 80%;
+  display: inline-block;
+}
